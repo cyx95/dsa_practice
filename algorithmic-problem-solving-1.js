@@ -2,6 +2,31 @@
 
 // You must implement a solution with a linear runtime complexity and use only constant extra space.
 
+function singleDigit(nums) {
+    if (nums.length == 1) {
+        return nums[0]
+    }
+
+    let hash = {}
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] in hash) {
+            hash[nums[i]]++
+        } else {
+            hash[nums[i]] = 1
+        }
+    }
+
+    for (key in hash) {
+        if (hash[key] == 1) {
+            return key
+        }
+    }
+}
+
+console.log(singleDigit([2,2,1]))
+console.log(singleDigit([4,1,2,1,2]))
+console.log(singleDigit([1]))
+
  
 
 // Example 1:
