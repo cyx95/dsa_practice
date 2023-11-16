@@ -3,10 +3,12 @@
 // You must implement a solution with a linear runtime complexity and use only constant extra space.
 
 function singleDigit(nums) {
+    // base case
     if (nums.length == 1) {
         return nums[0]
     }
 
+    // create a hash map
     let hash = {}
     for (let i = 0; i < nums.length; i++) {
         if (nums[i] in hash) {
@@ -16,6 +18,7 @@ function singleDigit(nums) {
         }
     }
 
+    // loop through the hash and check if the value equals to 1
     for (key in hash) {
         if (hash[key] == 1) {
             return key
